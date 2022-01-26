@@ -54,6 +54,6 @@ def kmeans(init_contour_points, points, cutoff):
 
         # If the centroids have stopped moving much, say we're done!
         if biggest_shift < cutoff:
-            print "Converged after %s iterations" % loopCounter
+            print ("Converged after %s iterations" % loopCounter)
             break
     return clusters

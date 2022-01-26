@@ -10,7 +10,8 @@ import util
 import errors
 import numpy as np
 
-tesseract_exe_name = 'tesseract' # Name of executable to be called at command line
+tesseract_exe_name = r'C:\Program Files\Tesseract-OCR\tesseract'
+# Name of executable to be called at command line
 scratch_image_name = "temp.bmp" # This file must be .bmp or other Tesseract-compatible format
 scratch_text_name_root = "temp" # Leave out the .txt extension
 cleanup_scratch_flag = False  # Temporary files cleaned up after OCR operation

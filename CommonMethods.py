@@ -5,6 +5,7 @@
 
 # Imports
 import math
+from functools import reduce
 from PIL import Image
 import cv2
 from PIL import ImageFilter
@@ -52,7 +53,7 @@ def processImage(path, input_image_name):
                 cv2.imwrite(file_name, roi)
                 cv2.rectangle(im, (x, y), (x + w, y + h), (255, 0, 255), 2)
                 image = removeImageContent(image, [x - 3, y - 3, (x + w + 3), (y + h + 3)])
-                print "Text :", text, "$$"
+                print ("Text :", text, "$$")
     image.save(image_detected_dir_path + "Cut_" + input_image_name)
     imageObject = ImageObject(im, contour_list, input_image_name)
     return imageObject
@@ -71,16 +72,16 @@ def addCountourToList(contour_list, cnt, x, y, text):
             tempX = contour_var.x - x
             tempY = contour_var.y - y
             if tempY < 5 and tempX < 5:
-                print "Point removed" + str(x) + str(y)
+                print ("Point removed" + str(x) + str(y))
                 flag = False
             if x == 1 and y == 1:
                 flag = False
-                print "Point removed" + str(x) + str(y)
+                print ("Point removed" + str(x) + str(y))
         if flag and (text != "" or len(text) != 0):
             contour_object = ContourObject(cnt, x, y, text)
             if contour_object.cX != 0 and contour_object.cY != 0:
                 contour_list.append(contour_object)
-                print x, y, text
+                print (x, y, text)
             else:
                 flag = False
         else:

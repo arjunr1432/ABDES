@@ -10,8 +10,8 @@ from ConsoleOutMethods import displayClusters
 from CustomClasses import TrainedData
 from Kmeans import kmeans
 import matplotlib.pyplot as plt
-from dill import dill
-
+# from dill import dill
+import dill
 
 def trainData(images_names_to_train):
     images = []

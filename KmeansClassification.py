@@ -29,7 +29,8 @@ def kmeansClassification(clusters, points):
                 smallest_distance = distance
                 cluster_index = i + 1
         if smallest_distance > 50:
-            print "Removed"
+            print ("Removed")
+            point_cluster_map.append((p, None))
         else:
             point_cluster_map.append((p, clusters[cluster_index]))
     return point_cluster_map

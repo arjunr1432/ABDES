@@ -6,6 +6,7 @@
 # Imports
 import cv2
 import math
+from functools import reduce
 
 
 # ImageObject class is used for saving the complete details of an input image.
@@ -41,7 +42,7 @@ class ContourObject():
             cy = int(M["m01"] / M["m00"])
         else:
             cx, cy = 0, 0
-            print x, y, "halo"
+            print (x, y, "halo")
         # cx = int(M['m10'] / M['m00'])
         # cy = int(M['m01'] / M['m00'])
         return cx, cy

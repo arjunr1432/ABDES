@@ -8,7 +8,7 @@ def image_to_scratch(im, scratch_image_name):
 	im.save(scratch_image_name, dpi=(200,200))
 
 def	retrieve_text(scratch_text_name_root):
-	inf = file(scratch_text_name_root + '.txt')
+	inf = open(scratch_text_name_root + '.txt')
 	text = inf.read()
 	inf.close()
 	return text

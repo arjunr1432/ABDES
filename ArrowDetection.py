@@ -10,8 +10,8 @@ from ConsoleOutMethods import displayArrows
 from CustomClasses import Point, LineObject, Head, ArrowObject, Tail
 
 
-def arrowEvaluation():
-    image_file_name = "proj_diag1_Mixed.jpg"
+def arrowEvaluation(image_file_name):
+    # image_file_name = "proj_diag1_Mixed.jpg"
     image_file_path = image_detected_dir_path + "Cut_" + image_file_name
     im = cv2.imread(image_file_path)
     gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
